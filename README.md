@@ -39,11 +39,11 @@ def split_dataset(dataset):
     return train_test_split(dataset_features, dataset['Class'], test_size=0.3, random_state=20)
 ```
 
-### 0. Metrics
+### Metrics
 
-*Precision: true positives / (true positives + false positvises)*
-*Recall: true positives / (true positives + false negatives)*
-*Accuracy: (true positives + true negatives) / Total*
+*Precision: true positives / (true positives + false positvises)* <br>
+*Recall: true positives / (true positives + false negatives)* <br>
+*Accuracy: (true positives + true negatives) / Total* <br>
 
 ### 1. Naive Bayes classifier
 
@@ -54,18 +54,23 @@ def naiveBayesMethod(features_train, features_test, mines_train):
     classifier.fit(features_train, mines_train)
     return classifier.predict(features_test)
 ```
-
+<br>
 Confusion matrix:
-|   	|  Predicted negative|   Predicted positive|
-|---	|---	|---	|
-|   	**Acutal negative**	|   	29|   	9|
-|   	**Actual positive**|   	10|   	15|
+<br>
+<br>
+
+|       |     Predicted negative     |   Predicted positive   |
+| :------------: | :-------------: | :-------------: |
+|  **Acutal negative**	   |    29   | 9  |
+| **Actual positive**    |     10   | 15 |
+
 
 <br>
 
-Precision: 15/(15+9) = **62.5%**
-Recall: 15/(15+10) = **60%**
-Accuracy: (29+15)/(29+9+10+15) = **69.8%**
+
+Precision: 15/(15+9) = **62.5%**<br>
+Recall: 15/(15+10) = **60%**<br>
+Accuracy: (29+15)/(29+9+10+15) = **69.8%**<br>
 
 ### 2. Logistic Regression
 
@@ -76,18 +81,22 @@ def logistic_regression(features_train, features_test, mines_train):
     mines_model.fit(features_train, mines_train)
     return mines_model.predict(features_test)
 ```
-
+<br>
 Confusion matrix:
-|   	|  Predicted negative|   Predicted positive|
-|---	|---	|---	|
-|   	**Acutal negative**	|   	31|   	7|
-|   	**Actual positive**|   	7|   	18|
+<br>
+<br>
+
+|       |     Predicted negative     |   Predicted positive   |
+| :------------: | :-------------: | :-------------: |
+|  **Acutal negative**	   |    31   | 7 |
+| **Actual positive**    |     7   | 18 |
+
 
 <br>
 
-Precision: 18/(18+7) = **72%**
-Recall: 18/(18+7) = **72%**
-Accuracy: (31+18)/(31+7+7+18) = **77.7%**
+Precision: 18/(18+7) = **72%**<br>
+Recall: 18/(18+7) = **72%**<br>
+Accuracy: (31+18)/(31+7+7+18) = **77.7%**<br>
 
 
 ### 3. Neural Network
@@ -109,15 +118,19 @@ def neuralNetwork(features_train, features_test, mines_train):
     y_pred = (y_pred > 0.5)
     return y_pred
 ```
-
+<br>
 Confusion matrix:
-|   	|  Predicted negative|   Predicted positive|
-|---	|---	|---	|
-|   	**Acutal negative**	|   	34|   	4|
-|   	**Actual positive**|   	7|   	18|
+<br>
+<br>
+
+|       |     Predicted negative     |   Predicted positive   |
+| :------------: | :-------------: | :-------------: |
+|  **Acutal negative**	   |    34  | 4 |
+| **Actual positive**    |     7   | 18 |
+
 
 <br>
 
-Precision: 18/(18+4) = **81.8%**
-Recall: 18/(18+7) = **72%**
-Accuracy: (34+18)/(34+4+7+18) = **80.7%**
+Precision: 18/(18+4) = **81.8%**<br>
+Recall: 18/(18+7) = **72%**<br>
+Accuracy: (34+18)/(34+4+7+18) = **80.7%**<br>
